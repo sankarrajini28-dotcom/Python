@@ -1,0 +1,25 @@
+clickbait_patterns = [
+    "shocking",
+    "you won't believe",
+    "breaking",
+    "secret",
+    "viral",
+    "must watch",
+    "unbelievable",
+    "exclusive"
+]
+headline = input("Enter news headline: ")
+headline = headline.lower()
+found_patterns = []
+
+for pattern in clickbait_patterns:
+    if pattern in headline:
+        found_patterns.append(pattern)
+if found_patterns:
+    print("\n⚠ Suspicious News Detected")
+    print("Clickbait words found:")
+
+    for word in found_patterns:
+        print("-", word)
+else:
+    print("\n✓ News looks normal")
