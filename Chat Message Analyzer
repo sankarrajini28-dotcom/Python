@@ -1,0 +1,19 @@
+messages = [
+    "Hi 😊",
+    "How are you?",
+    "Let's meet tomorrow 👍",
+    "Are you coming? 🤔",
+    "Okay 😂"
+]
+total_messages = len(messages)
+question_count = 0
+emoji_count = 0
+emojis = ["😊", "👍", "🤔", "😂"]
+for msg in messages:
+    if "?" in msg:
+        question_count += 1
+    for emoji in emojis:
+        emoji_count += msg.count(emoji)
+print("Total Messages:", total_messages)
+print("Questions:", question_count)
+print("Emojis:", emoji_count)
