@@ -1,0 +1,6 @@
+import numpy as np
+numbers = np.arange(10)
+print("Array:")
+print(numbers)
+print("Dimensions:", numbers.ndim)
+print("Shape:", numbers.shape)
