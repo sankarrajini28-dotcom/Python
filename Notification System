@@ -1,0 +1,28 @@
+from datetime import datetime
+def send_notification(message):
+    print("\n🔔 Notification")
+    print(message)
+current_time = datetime.now()
+hour = current_time.hour
+if hour >= 18:
+    send_notification(
+        "Good Evening! Check today's updates."
+    )
+user_active = False
+if not user_active:
+    send_notification(
+        "You have been inactive for 30 minutes."
+    )
+priority = "HIGH"
+if priority == "HIGH":
+    send_notification(
+        "⚠ High Priority Alert!"
+    )
+elif priority == "MEDIUM":
+    send_notification(
+        "Daily report available."
+    )
+else:
+    send_notification(
+        "New offers available."
+    )
