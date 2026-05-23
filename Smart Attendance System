@@ -1,0 +1,28 @@
+from datetime import datetime
+students = {
+    "Arun": "08:55",
+    "Priya": "09:03",
+    "Rahul": "09:10",
+    "Sneha": "09:04"
+}
+limit_time = datetime.strptime(
+    "09:05",
+    "%H:%M"
+)
+print("Attendance Report:\n")
+for name, login_time in students.items():
+    student_time = datetime.strptime(
+        login_time,
+        "%H:%M"
+    )
+    if student_time <= limit_time:
+        status = "Present"
+    else:
+        status = "Absent"
+    print(
+        name,
+        "-",
+        login_time,
+        "-",
+        status
+    )
