@@ -1,25 +1,22 @@
-clickbait_patterns = [
-    "shocking",
-    "you won't believe",
-    "breaking",
-    "secret",
-    "viral",
-    "must watch",
-    "unbelievable",
-    "exclusive"
-]
-headline = input("Enter news headline: ")
-headline = headline.lower()
-found_patterns = []
-
-for pattern in clickbait_patterns:
-    if pattern in headline:
-        found_patterns.append(pattern)
-if found_patterns:
-    print("\n⚠ Suspicious News Detected")
-    print("Clickbait words found:")
-
-    for word in found_patterns:
-        print("-", word)
-else:
-    print("\n✓ News looks normal")
+from sklearn.feature_extraction.text import CountVectorizer
+resume = """
+Python SQL Excel Power BI Data Analysis
+"""
+job_description = """
+Python SQL Tableau Machine Learning Data Analysis
+"""
+resume = resume.lower()
+job_description = job_description.lower()
+resume_words = set(resume.split())
+job_words = set(job_description.split())
+matched_skills = resume_words.intersection(job_words)
+missing_skills = job_words.difference(resume_words)
+match_percentage = (
+    len(matched_skills) / len(job_words)
+) * 100
+print("Matched Skills:")
+print(matched_skills)
+print("\nMissing Skills:")
+print(missing_skills)
+print("\nMatch Percentage:")
+print(round(match_percentage, 2), "%")
