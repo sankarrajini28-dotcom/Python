@@ -1,0 +1,13 @@
+price = float(input("Enter product price: ₹"))
+if price > 5000:
+    discount = 20
+elif price >= 2000:
+    discount = 10
+else:
+    discount = 0
+discount_amount = (price * discount) / 100
+final_price = price - discount_amount
+print("\nOriginal Price: ₹", price)
+print("Discount:", discount, "%")
+print("Discount Amount: ₹", discount_amount)
+print("Final Price: ₹", final_price)
